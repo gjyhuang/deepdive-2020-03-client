@@ -10,6 +10,7 @@ import CreateQuestion from "./components/questions/CreateQuestion";
 import CreateOption from "./components/options/CreateOption";
 import AllOptions from "./components/options/AllOptions";
 import SingleQuestion from "./components/questions/SingleQuestion";
+import './main.scss';
 
 export default function App() {
   return (

@@ -9,11 +9,11 @@ const DeleteButton = ({itemId, itemType, history}) => {
   }
 
   return (
-    <button
+    <div className="button--delete"
       onClick={deleteItem}
     >
       X
-    </button>
+    </div>
   )
 }
 

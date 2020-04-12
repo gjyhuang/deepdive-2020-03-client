@@ -7,6 +7,9 @@ import {
 } from "react-router-dom";
 import AllQuestions from "./components/questions/AllQuestions";
 import CreateQuestion from "./components/questions/CreateQuestion";
+import CreateOption from "./components/options/CreateOption";
+import AllOptions from "./components/options/AllOptions";
+import SingleQuestion from "./components/questions/SingleQuestion";
 
 export default function App() {
   return (
@@ -26,6 +29,9 @@ export default function App() {
             <li>
               <Link to="/questions/create">Create Question</Link>
             </li>
+            <li>
+              <Link to="/options">Options</Link>
+            </li>
           </ul>
         </nav>
 
@@ -35,12 +41,23 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
+          <Route exact path="/options/create">
+            <CreateOption />
+          </Route>
+          <Route path="/options">
+            <AllOptions />
+          </Route>
           <Route exact path="/questions/create">
             <CreateQuestion />
           </Route>
-          <Route path="/questions">
-            <AllQuestions />
-          </Route>
+          <Route
+            path="/questions/:id"
+            component={SingleQuestion}
+          />
+          <Route
+            path="/questions"
+            component={AllQuestions}
+          />
           <Route path="/">
             <Home />
           </Route>

@@ -1,44 +1,47 @@
 import React, { useState } from 'react';
+import { useInput } from '../../hooks/useInput';
 import axios from 'axios';
 
-const CreateQuestion = () => {
-  const [body, setBody] = useState("");
-  const [instructions, setInstructions] = useState("");
+const CreateOption = () => {
+  // const [body, setBody] = useState("");
+  // const [instructions, setInstructions] = useState("");
+  const { value:body, bind:bindBody, reset:resetBody } = useInput('');
+  const { value:imageUrl, bind:bindImageUrl, reset:resetImageUrl } = useInput('');
+
+
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-    console.log(body, instructions);
-    await axios.post('/api/questions', {
-      body,
-      instructions
-    });
-    setBody("");
-    setInstructions("");
+    console.log(body, imageUrl);
+    // await axios.post('/api/questions', {
+    //   body,
+    //   instructions
+    // });
+    resetBody();
+    resetImageUrl();
   }
 
   return (
     <div className="question-create">
       <div className="question-create__header">
-        <h2>Create A New Question</h2>
+        <h2>Create A New Option</h2>
       </div>
       <form className="question-create__form">
         <label>
-          Please enter a question:
+          Please enter an option:
         </label>
         <input
           className="question-create__input-body"
           type="text"
-          value={body}
-          onChange={evt => setBody(evt.target.value)}
+          {...bindBody}
         />
         <label>
-          Please enter additional instructions:
+          Please enter an image URL:
         </label>
         <input
           className="question-create__input-instructions"
           type="text"
-          value={instructions}
-          onChange={evt => setInstructions(evt.target.value)}
+          {...bindImageUrl}
         />
         <input
           className="question-create__input-submit"
@@ -51,4 +54,4 @@ const CreateQuestion = () => {
   )
 }
 
-export default CreateQuestion;
+export default CreateOption;

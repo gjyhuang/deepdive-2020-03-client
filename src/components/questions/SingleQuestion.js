@@ -11,12 +11,12 @@ const SingleQuestion = (props) => {
 
   const getQuestion = async () => {
     const { id } = props.match.params;
-    const { data } = await axios.get(`/api/questions/${id}`);
+    const { data } = await axios.get(`https://deepdive2020march.herokuapp.com/api/questions/${id}`);
     setQuestion(data);
   }
 
   const getAllOptions = async () => {
-    const { data } = await axios.get("/api/options");
+    const { data } = await axios.get("https://deepdive2020march.herokuapp.com/api/options");
     setAllOptions(data);
   }
   // console.log('props?', props);

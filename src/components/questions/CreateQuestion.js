@@ -8,7 +8,7 @@ const CreateQuestion = () => {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     console.log(body, instructions);
-    await axios.post('/api/questions', {
+    await axios.post('https://deepdive2020march.herokuapp.com/api/questions', {
       body,
       instructions
     });

@@ -23,20 +23,20 @@ const AllQuestions = (props) => {
       <div className="question__header">
         <h2>Questions</h2>
       </div>
-      <div>
+      <div className="question__list">
         {questions.map(question =>
           <div className="question__item" key={question.id}>
             <div className="question__item-body">
               {question.body} <Link to={`/questions/${question.id}`}>{question.id}</Link>
-              <DeleteButton
-                itemId={question.id}
-                itemType="questions"
-                history={props.history}
-              />
             </div>
             <div className="question__item-instructions">
               {question.instructions}
             </div>
+            <DeleteButton
+              itemId={question.id}
+              itemType="questions"
+              history={props.history}
+            />
           </div>)}
       </div>
     </div>

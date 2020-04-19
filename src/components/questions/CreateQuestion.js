@@ -41,7 +41,7 @@ const CreateQuestion = () => {
           onChange={evt => setInstructions(evt.target.value)}
         />
         <input
-          className="question-create__input-submit"
+          className="button--submit"
           type="submit"
           value="Add My Question"
           onClick={handleSubmit}

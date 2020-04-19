@@ -1,9 +1,37 @@
-.button--delete {
+%button {
   text-transform: uppercase;
   padding: 12px;
   display: inline-block;
   text-align: center;
-  background-color: #b32550;
-  color: #ffffff;
   font-weight: 700;
+  transition: all 0.4s ease 0s;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    transition: all 0.4s ease 0s;
+  }
+}
+
+%error-color {
+  background-color: $button-delete;
+  color: #ffffff;
+}
+
+.button--delete {
+  @extend %button;
+  @extend %error-color;
+  &:hover {
+    background-color: $button-delete-hover;
+  }
+}
+
+.button--submit {
+  @extend %button;
+  background-color: #257fb3;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #0d476d;
+  }
 }

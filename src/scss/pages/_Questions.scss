@@ -1,3 +1,28 @@
+@import '../abstracts/mixins';
+
 .question {
+  @include flex-center-hor-col;
   padding: 20px;
+}
+
+.question__list {
+  @include flex-center-hor-col;
+}
+
+.question__item {
+  @include flex-spacebetween-hor;
+  width: 500px;
+}
+
+.question-create {
+  padding: 20px;
+}
+
+.question-single {
+  padding: 20px;
+}
+
+.question__typeahead {
+  height: 100px;
+  margin-bottom: 40px;
 }

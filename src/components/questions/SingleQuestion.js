@@ -30,7 +30,7 @@ const SingleQuestion = (props) => {
         optionId: option.id,
         isAnswer: false
       }
-      await axios.post("/api/questionOptions", dataToSend);
+      await axios.post("https://deepdive2020march.herokuapp.com/api/questionOptions", dataToSend);
       getQuestion();
     })
   }
